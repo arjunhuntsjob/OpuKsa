@@ -213,20 +213,17 @@
 </head>
 
 <body class="text-gray-800">
-    <!-- <div id="header"></div> -->
-    <header id="main-header" class="fixed top-0 z-50 w-full transition-all duration-300 ease-in-out text-white"
+    <div id="header"></div>
+    <!-- <header id="main-header" class="fixed top-0 z-50 w-full transition-all duration-300 ease-in-out text-white"
         style="box-shadow: 0px 0px 5px 0px darkgray;">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <nav class="flex items-center justify-between h-20">
-                <!-- Logo -->
                 <div class="flex items-center space-x-2">
                     <span class="text-2xl font-extrabold tracking-wide transition-colors duration-300"
                         id="logo-text">OPU</span>
                 </div>
 
-                <!-- Desktop Menu -->
                 <div class="hidden lg:flex space-x-8 items-center text-[17px] font-semibold" id="desktop-menu">
-                    <!-- Links will change color based on scroll position -->
                     <a href="/" class="hover:text-secondary transition-colors duration-300 relative group header-link">
                         Home
                         <span
@@ -240,7 +237,6 @@
                         </button>
                         <div
                             class="absolute left-1/2 transform -translate-x-1/2 mt-3 w-60 bg-white rounded-xl shadow-2xl py-3 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100 text-gray-700">
-                            <!-- Dropdown Links remain fixed text-gray-700 -->
                             <a href="/services/opu_auditing.html" class="block px-5 py-2 hover:bg-gray-50">Auditing</a>
                             <a href="/services/opu_accounting.html"
                                 class="block px-5 py-2 hover:bg-gray-50">Accounting</a>
@@ -272,7 +268,6 @@
                             class="absolute left-0 bottom-0 w-0 h-[2px] bg-secondary transition-all duration-300 group-hover:w-full"></span></a>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-full hover:bg-gray-100 transition">
                     <i data-lucide="menu" class="w-6 h-6 text-white transition-colors duration-300"
                         id="mobile-menu-icon"></i>
@@ -280,17 +275,14 @@
             </nav>
         </div>
 
-        <!-- Mobile Menu (Background is fixed white/shadow when open) -->
         <div id="mobile-menu-container"
             class="hidden lg:hidden bg-white shadow-2xl border-t border-gray-100 absolute w-full pb-5 rounded-b-2xl text-gray-700">
             <div class="flex flex-col space-y-2 px-5 text-base font-medium pt-3 text-center">
-                <!-- Main Links - Centered -->
                 <a href="/"
                     class="block py-2 px-4 rounded-lg shadow-sm hover:bg-gray-50 hover:text-primary transition border-l-4 border-transparent hover:border-secondary">
                     Home
                 </a>
 
-                <!-- Services Dropdown Button - Centered (justify-center centers the text and icon) -->
                 <div class="relative">
                     <button id="mobile-services-button" aria-expanded="false"
                         class="flex justify-center items-center w-full py-2 px-4 shadow-sm hover:text-primary rounded-lg focus:outline-none transition border-l-4 border-transparent hover:border-secondary">
@@ -298,7 +290,6 @@
                     </button>
                     <div id="mobile-services-dropdown"
                         class="mt-2 bg-gray-50 border border-gray-100 rounded-lg shadow-lg py-2 z-50 opacity-0 invisible transition-all duration-300 w-[300px] mx-auto text-left">
-                        <!-- Dropdown Links remain left-aligned for optimal readability -->
                         <a href="/services/opu_auditing.html"
                             class="block px-4 py-2 rounded-lg shadow-sm hover:bg-white text-gray-700 transition hover:shadow-sm border-l-4 border-transparent hover:border-secondary">Auditing</a>
                         <a href="/services/opu_accounting.html"
@@ -321,7 +312,6 @@
                     </div>
                 </div>
 
-                <!-- Remaining Main Links - Centered -->
                 <a href="/opu_ourteam.html"
                     class="block py-2 px-4 rounded-lg shadow-sm hover:bg-gray-50 hover:text-primary transition border-l-4 border-transparent hover:border-secondary">Our
                     Team</a>
@@ -333,7 +323,8 @@
                     class="block py-2 px-4 rounded-lg shadow-sm hover:bg-gray-50 hover:text-primary transition border-l-4 border-transparent hover:border-secondary">Blog</a>
             </div>
         </div>
-    </header>
+    </header> -->
+
     <!-- HEADER -->
 
 
@@ -1095,67 +1086,51 @@
         // Run the initialization function
         initHeaderFunctions();
     </script>
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            /* ======================================
-               1️⃣ Mobile Menu Toggle
-            ====================================== */
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu-container');
-            if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
+            // const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            // const mobileMenu = document.getElementById('mobile-menu-container');
+            // if (mobileMenuBtn && mobileMenu) {
+            //     mobileMenuBtn.addEventListener('click', () => {
+            //         mobileMenu.classList.toggle('hidden');
+            //     });
+            // }
 
-            /* ======================================
-               2️⃣ Mobile Services Dropdown
-            ====================================== */
-            const mobileServicesBtn = document.getElementById('mobile-services-button');
-            const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
-            if (mobileServicesBtn && mobileServicesDropdown) {
-                mobileServicesBtn.addEventListener('click', () => {
-                    const isExpanded = mobileServicesBtn.getAttribute('aria-expanded') === 'true';
-                    mobileServicesBtn.setAttribute('aria-expanded', String(!isExpanded));
-                    if (isExpanded) {
-                        mobileServicesDropdown.classList.add('opacity-0', 'invisible');
-                        mobileServicesDropdown.classList.remove('opacity-100', 'visible');
-                        mobileServicesDropdown.style.pointerEvents = "none";
-                    } else {
-                        mobileServicesDropdown.classList.remove('opacity-0', 'invisible');
-                        mobileServicesDropdown.classList.add('opacity-100', 'visible');
-                        mobileServicesDropdown.style.pointerEvents = "auto";
-                    }
-                });
-            }
+            // const mobileServicesBtn = document.getElementById('mobile-services-button');
+            // const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
+            // if (mobileServicesBtn && mobileServicesDropdown) {
+            //     mobileServicesBtn.addEventListener('click', () => {
+            //         const isExpanded = mobileServicesBtn.getAttribute('aria-expanded') === 'true';
+            //         mobileServicesBtn.setAttribute('aria-expanded', String(!isExpanded));
+            //         if (isExpanded) {
+            //             mobileServicesDropdown.classList.add('opacity-0', 'invisible');
+            //             mobileServicesDropdown.classList.remove('opacity-100', 'visible');
+            //             mobileServicesDropdown.style.pointerEvents = "none";
+            //         } else {
+            //             mobileServicesDropdown.classList.remove('opacity-0', 'invisible');
+            //             mobileServicesDropdown.classList.add('opacity-100', 'visible');
+            //             mobileServicesDropdown.style.pointerEvents = "auto";
+            //         }
+            //     });
+            // }
 
-            /* ======================================
-               3️⃣ Initialize Lucide Icons
-            ====================================== */
             if (window.lucide) lucide.createIcons();
 
-            /* ======================================
-               4️⃣ GSAP Animations
-            ====================================== */
             gsap.registerPlugin(ScrollTrigger);
 
-            // Hero animation
             gsap.timeline()
                 .from('.hero-subtext', { y: 20, opacity: 0, duration: 0.5 })
                 .from('.hero-title', { y: 30, opacity: 0, duration: 0.7 }, '-=0.3')
-                .from('.hero-text', { y: 20, opacity: 0, duration: 0.5 }, '-=0.4')
-            // .from('.hero-cta', { scale: 0.8, opacity: 0, duration: 0.7 }, '-=0.5');
+                .from('.hero-text', { y: 20, opacity: 0, duration: 0.5 }, '-=0.4');
 
-            // Animate SVG arc
             gsap.fromTo('#invoice-arc', { strokeDashoffset: 283 }, {
                 strokeDashoffset: 85, duration: 1.4, ease: "power1.inOut", delay: 0.6
             });
 
-            // Floating Cards
             gsap.to('#float-card-1', { y: 15, repeat: -1, yoyo: true, duration: 3, ease: 'sine.inOut' });
             gsap.to('#float-card-2', { y: -10, repeat: -1, yoyo: true, duration: 3.5, ease: 'sine.inOut' });
 
-            // Service Cards Scroll Animations
             document.querySelectorAll('.service-card').forEach((card, index) => {
                 gsap.from(card, {
                     y: 60,
@@ -1172,7 +1147,6 @@
                 });
             });
 
-            // About Section Animations
             gsap.from(['.about-img-main', '.about-img-small-1', '.about-img-small-2', '.about-img-small-3'], {
                 scale: 0.8,
                 opacity: 0,
@@ -1209,7 +1183,6 @@
                 }
             });
 
-            // Charts animation
             gsap.to('#chart-1-path', {
                 strokeDasharray: '100, 100',
                 duration: 1.5,
@@ -1232,6 +1205,7 @@
             });
         });
     </script>
+
 
     <script>
         // --- FAQ LOGIC ---
