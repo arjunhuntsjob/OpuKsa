@@ -1,0 +1,48 @@
+ :root {
+     --primary-color: #064e3b;
+     --secondary-color: #10b981;
+     --color-secondary: #059669;
+     --color-primary: #064e3b;
+     /* --color-secondary: #059669; */
+     /* --secondary-color: #10b981; */
+ }
+
+
+ /* Add to container of flex items for reference */
+ .lg-flex-container {
+     position: relative;
+     display: flex;
+     justify-content: space-between;
+ }
+
+ /* Make sure left content is above right side if overlapping */
+ .lg-flex-container>.left {
+     width: 50%;
+     background: #fff;
+     /* temporary for testing */
+     z-index: 20;
+     position: relative;
+ }
+
+ /* Right side containment */
+ .lg-flex-container>.right {
+     width: 50%;
+     position: relative;
+     /* so absolute inside is relative to this */
+     z-index: 10;
+ }
+
+ /* Floating cards adjustments */
+ #float-card-1,
+ #float-card-2 {
+     z-index: 30;
+     /* just confirm */
+     pointer-events: auto;
+     /* allow interaction */
+ }
+
+ /* If absolute cards going outside right container, constrain */
+ .lg-flex-container>.right {
+     overflow: visible;
+     /* or hidden if you want clip */
+ }
